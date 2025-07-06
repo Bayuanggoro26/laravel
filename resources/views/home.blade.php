@@ -20,7 +20,11 @@
             <td class="border px-4 py-2 text-left">{{$item['email']}}</td>
             <td class="border px-4 py-2 text-left">
                 <a href="/{{$item['id']}}/edit">Edit</a>
-                <a href="">Hapus</a>
+                 <form action="/{{ $item->id }}" method="POST" onsubmit="return confirm('Hapus data ini?')" class="inline">
+                @csrf
+                @method('DELETE')
+            <button type="submit" class="text-red-500">Hapus</button>
+        </form>
             </td>
             
         </tr>
