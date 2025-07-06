@@ -1,0 +1,31 @@
+@extends('components.layout')
+
+@section('body')
+<a href="/create" class="bg-blue-500 mb-2 px-4 rounded">create new.</a>
+
+  <table class="w-100">
+    <thead class="bg-gray-500 border ">
+        <tr class=""">
+            <th class=" border px-4 py-2 ">Name</th>
+            <th class=" border px-4 py-2 ">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($posts as $item)
+            
+        <tr>
+           
+                
+            <td class="border px-4 py-2 text-left">{{ $item ['name']}}</td>
+            <td class="border px-4 py-2 text-left">{{$item['email']}}</td>
+            <td class="border px-4 py-2 text-left">
+                <a href="/{{$item['id']}}/edit">Edit</a>
+                <a href="">Hapus</a>
+            </td>
+            
+        </tr>
+        @endforeach
+        
+    </tbody>
+  </table>
+@endsection
