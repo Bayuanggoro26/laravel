@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,3 +10,5 @@ Route::get('/',[PostController::class,'index']);
 Route::get('/{id}/edit',[PostController::class,'edit']);
 Route::put('/{id}',[PostController::class,'update']);
 Route::delete('/{id}', [PostController::class, 'destroy']);
+
+Route::get('/view',[BeritaController::class,'index']);
